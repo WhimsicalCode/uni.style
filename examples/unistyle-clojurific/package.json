@@ -1,0 +1,21 @@
+{
+  "name": "unistyle-clojurific-example",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "repl": "cljf repl",
+    "lint": "mkdir -p .clj-kondo && clj-kondo --lint \"$(cljf classpath)\" --dependencies --parallel --copy-configs && clj-kondo --lint src && cljfmt check src"
+  },
+  "dependencies": {
+    "@base-ui/react": "1.9.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "clojurific": "0.12.11",
+    "vite": "8.3.5"
+  }
+}

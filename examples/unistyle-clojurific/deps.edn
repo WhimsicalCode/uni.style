@@ -1,0 +1,8 @@
+{:paths ["src"]
+ ;; The cljf launcher adds the compiler (com.whimsical/clojurific, of the npm
+ ;; package's version) and keeps stock ClojureScript off the classpath.
+ :deps {org.clojure/clojure {:mvn/version "1.12.5"}
+        reagent/reagent {:mvn/version "2.0.1"}
+        com.whimsical/uni.style {:local/root "../.."}
+        ;; the dev server's nREPL server, for npm run repl and editors
+        nrepl/nrepl {:mvn/version "1.8.0"}}}

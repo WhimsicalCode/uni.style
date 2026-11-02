@@ -1,0 +1,16 @@
+{
+  "name": "unistyle-reagent-example",
+  "private": true,
+  "scripts": {
+    "dev": "clojure -M:cljs watch app",
+    "build": "clojure -M:cljs release app",
+    "serve": "clojure -M:cljs server",
+    "lint": "mkdir -p .clj-kondo && clj-kondo --lint \"$(clojure -Spath)\" --dependencies --parallel --copy-configs && clj-kondo --lint src && cljfmt check src"
+  },
+  "dependencies": {
+    "@base-ui/react": "1.7.0",
+    "process": "0.11.10",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  }
+}

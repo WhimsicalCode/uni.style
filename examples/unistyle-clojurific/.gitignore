@@ -1,0 +1,9 @@
+/node_modules/
+/dist/
+/target/
+/.cljf/
+/.cpcache/
+/.nrepl-port
+/.clj-kondo/.cache/
+/.clj-kondo/imports/
+/public/css/

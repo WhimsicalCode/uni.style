@@ -1,0 +1,7 @@
+/.cpcache/
+/.shadow-cljs/
+/node_modules/
+/.clj-kondo/.cache/
+/.clj-kondo/imports/
+/public/js/
+/public/css/

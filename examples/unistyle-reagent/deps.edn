@@ -1,0 +1,7 @@
+{:paths ["src"]
+ :deps {org.clojure/clojure {:mvn/version "1.12.5"}
+        org.clojure/clojurescript {:mvn/version "1.12.145"}
+        reagent/reagent {:mvn/version "2.0.1"}
+        com.whimsical/uni.style {:local/root "../.."}}
+ :aliases {:cljs {:extra-deps {thheller/shadow-cljs {:mvn/version "3.5.4"}}
+                  :main-opts ["-m" "shadow.cljs.devtools.cli"]}}}

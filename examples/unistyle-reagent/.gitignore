@@ -1,0 +1,5 @@
+/.cpcache/
+/.clj-kondo/.cache/
+/.clj-kondo/imports/
+/public/js/
+/public/css/

@@ -1,0 +1,7 @@
+{:lint-as {uni.style.core/def-animation clojure.core/def}
+ :hooks {:analyze-call {uni.style.colors/def-color hooks.uni.style/def-color
+                        uni.style.core/def-theme hooks.uni.style/def-theme
+                        uni.style.core/def-token hooks.uni.style/def-component
+                        uni.style.core/def-component hooks.uni.style/def-component
+                        uni.style.core/css hooks.uni.style/css
+                        uni.style.core/def-variants hooks.uni.style/def-variants}}}

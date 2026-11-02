@@ -1,0 +1,38 @@
+{:parallel? true
+ :function-arguments-indentation :cursive
+ :remove-consecutive-blank-lines? false
+ :indent-line-comments? true
+ :extra-indents {uni.style.core/ancestor [[:block 1]]
+                 uni.style.core/ancestor-active [[:block 1]]
+                 uni.style.core/ancestor-attr [[:block 2]]
+                 uni.style.core/ancestor-attr= [[:block 3]]
+                 uni.style.core/ancestor-disabled [[:block 1]]
+                 uni.style.core/ancestor-focus [[:block 1]]
+                 uni.style.core/ancestor-focus-visible [[:block 1]]
+                 uni.style.core/ancestor-focus-within [[:block 1]]
+                 uni.style.core/ancestor-has [[:block 2]]
+                 uni.style.core/ancestor-hover [[:block 1]]
+                 uni.style.core/ancestor-not-disabled [[:block 1]]
+                 uni.style.core/attr [[:block 1]]
+                 uni.style.core/attr= [[:block 2]]
+                 uni.style.core/container [[:block 1]]
+                 uni.style.core/has [[:block 1]]
+                 uni.style.core/media [[:block 1]]
+                 uni.style.core/nth [[:block 1]]
+                 uni.style.core/nth-last [[:block 1]]
+                 uni.style.core/nth-last-of-type [[:block 1]]
+                 uni.style.core/nth-of-type [[:block 1]]
+                 uni.style.core/pseudo [[:block 1]]
+                 uni.style.core/sel [[:block 1]]
+                 uni.style.core/sel-class [[:block 1]]
+                 uni.style.core/self-or-ancestor [[:block 1]]
+                 uni.style.core/supports [[:block 1]]
+                 are [[:inner 0]]
+                 deftype [[:inner 0] [:inner 1]]
+                 extend-type [[:inner 0] [:inner 1]]
+                 cond-> [[:block 0]]
+                 as-> [[:block 0]]
+                 cond->> [[:block 0]]
+                 assoc [[:block 0]]}
+ :alias-map {s uni.style.core
+             sc uni.style.colors}}

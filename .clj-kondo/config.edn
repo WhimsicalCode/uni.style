@@ -1,0 +1,5 @@
+{:config-paths ["../resources/clj-kondo.exports/com.whimsical/uni.style"]
+ :linters {:private-call {:level :off}
+           :unused-binding {:exclude-destructured-keys-in-fn-args true
+                            :exclude-destructured-as true
+                            :exclude-patterns ["^this"]}}}

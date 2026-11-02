@@ -1,0 +1,21 @@
+{:paths ["src" "resources"]
+ :deps {org.clojure/clojure {:mvn/version "1.12.5"}
+        hiccup/hiccup {:mvn/version "2.0.0"}
+        metosin/reitit-ring {:mvn/version "0.9.1"}
+        ring/ring-core {:mvn/version "1.15.4"}
+        ring/ring-jetty-adapter {:mvn/version "1.15.4"}
+        ring/ring-anti-forgery {:mvn/version "1.4.0"}
+        org.slf4j/slf4j-simple {:mvn/version "2.0.17"}
+        ;; Keep the adapter's Jetty modules on the repository's patched version.
+        org.eclipse.jetty/jetty-server {:mvn/version "12.1.11"}
+        org.eclipse.jetty/jetty-unixdomain-server {:mvn/version "12.1.11"}
+        org.eclipse.jetty.ee9/jetty-ee9-servlet {:mvn/version "12.1.11"}
+        org.eclipse.jetty.ee9.websocket/jetty-ee9-websocket-jetty-server {:mvn/version "12.1.11"}
+        com.whimsical/uni.style {:local/root "../.."}}
+ :aliases {:dev {:extra-paths ["dev"]
+                 :extra-deps {ring/ring-devel {:mvn/version "1.15.4"}}
+                 :main-opts ["-m" "example.dev"]}
+           :build {:main-opts ["-m" "example.build"]}
+           :serve {:main-opts ["-m" "example.server"]}
+           :test {:extra-paths ["test"]
+                  :main-opts ["-m" "example.todos-test"]}}}

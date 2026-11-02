@@ -1,0 +1,14 @@
+{:paths ["src" "resources"]
+ ;; ClojureScript builds expand the macros with their own ClojureScript
+ ;; compiler, and JVM code needs none, so only the standalone aliases add one.
+ :deps {org.clojure/clojure {:mvn/version "1.12.6"}
+        org.clojure/tools.logging {:mvn/version "1.3.1"}}
+ :aliases {:test {:extra-paths ["test"]
+                  :extra-deps {org.clojure/clojurescript {:mvn/version "1.12.145"}
+                               com.cognitect/transit-clj {:mvn/version "1.0.333"}
+                               lambdaisland/kaocha {:mvn/version "1.91.1392"}}
+                  :main-opts ["-m" "kaocha.runner"]}
+           :cljs {:extra-paths ["test"]
+                  :extra-deps {org.clojure/clojurescript {:mvn/version "1.12.145"}
+                               thheller/shadow-cljs {:mvn/version "3.5.4"}}
+                  :main-opts ["-m" "shadow.cljs.devtools.cli"]}}}

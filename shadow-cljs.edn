@@ -1,0 +1,5 @@
+{:deps {:aliases [:cljs]}
+ :builds {:test {:target :node-test
+                 :output-to "target/test.js"
+                 :ns-regexp "^uni\\.style\\..*-test$"
+                 :autorun true}}}

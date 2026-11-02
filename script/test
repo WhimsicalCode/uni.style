@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd "$(dirname "$0")/.."
+clojure -M:test "$@"
+clojure -M:cljs compile test
+clojure -M:cljs release test --config-merge \
+  '{:output-to "target/portable-release.js" :ns-regexp "^uni\\.style\\.(colors|portable|theme|theme-runtime)-test$"}'

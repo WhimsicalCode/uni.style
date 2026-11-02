@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# Tests the Clojars artifact: installs it (script/clojars) into an empty local
+# Maven repository, then builds a stylesheet on the JVM in a project depending
+# on com.whimsical/uni.style by version. Downloads its dependencies into that
+# repository.
+
+set -e
+cd "$(dirname "$0")/.."
+
+version=$(cat VERSION)
+dir=$(mktemp -d)
+trap 'rm -rf "$dir"' EXIT
+
+script/clojars install "$dir/m2"
+
+mkdir -p "$dir/project/src/smoke"
+printf '{:paths ["src"]\n :deps {com.whimsical/uni.style {:mvn/version "%s"}}\n :mvn/local-repo "%s"}\n' \
+  "$version" "$dir/m2" > "$dir/project/deps.edn"
+cat > "$dir/project/src/smoke/views.clj" <<'CLJ'
+(ns smoke.views
+  (:require [uni.style.core :as s]))
+
+(defn view []
+  [:div {:class (s/class-name (s/c (s/flex) (s/p 8)))}])
+CLJ
+(
+  cd "$dir/project"
+  # the installed jar, not the library's sources
+  jar="$dir/m2/com/whimsical/uni.style/$version/uni.style-$version.jar"
+  clojure -Spath | tr ':' '\n' | grep -qx "$jar"
+  unzip -l "$jar" | grep -q 'clj-kondo.exports/com.whimsical/uni.style/config.edn'
+  css=$(clojure -M -e "(require '[uni.style.build :as b]) (print (b/css #(require 'smoke.views :reload)))")
+  echo "$css" | grep -qF '{display:flex;}'
+  echo "$css" | grep -qF '{padding:8px;}'
+)
+echo "Clojars artifact: ok"
