@@ -1,6 +1,19 @@
+<br/>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/unistyle-light-60.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/unistyle-dark-60.svg">
+    <img alt="uni.style logo" src="./assets/unistyle-dark-60.svg" height="60">
+  </picture>
+</p>
+<p align="center">
+  <a href="https://clojars.org/com.whimsical/uni.style"><img src="https://img.shields.io/clojars/v/com.whimsical%2Funi.style?color=2BB89A" alt="Clojars version"></a>
+</p>
+<br/>
+
 # UniStyle
 
-UniStyle (`uni.style`) is a compile-time CSS library for ClojureScript and Clojure.
+UniStyle is a compile-time CSS library for ClojureScript and Clojure.
 
 * **Style without leaving your markup.** Tailwind-style utilities like `(s/flex)` and `(s/p 8)` go right in your components, and macros turn them into static atomic CSS.
 
