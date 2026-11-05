@@ -36,7 +36,7 @@ UniStyle is a compile-time CSS library for ClojureScript and Clojure.
 
 (defn example-comp [{:keys [class]}]
   ;; s/c merges classes, ensuring that last style for the same CSS prop wins.
-  ;; Colors are similar to Tailwind but alghorithmic and levels are inverse 
+  ;; Colors are similar to Tailwind but algorithmic and levels are inverse 
   ;; (0 = black, 100 = white).
   [:div {:class (s/c (s/bg (sc/green 50)) 
                      (s/color (sc/neutral 100))
